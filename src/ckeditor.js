@@ -11,7 +11,7 @@ import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapte
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
-import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
@@ -28,7 +28,11 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
-
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import FontSize from '@ckeditor/ckeditor5-font/src/fontsize';
+import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
+import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolor';
+import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak';
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
@@ -38,7 +42,7 @@ ClassicEditor.builtinPlugins = [
 	Autoformat,
 	Bold,
 	Italic,
-	BlockQuote,
+	Underline,
 	CKFinder,
 	EasyImage,
 	Heading,
@@ -54,7 +58,12 @@ ClassicEditor.builtinPlugins = [
 	Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar
+	TableToolbar,
+	Alignment,
+	FontSize,
+	FontColor,
+	FontBackgroundColor,
+	PageBreak
 ];
 
 // Editor configuration.
@@ -65,19 +74,22 @@ ClassicEditor.defaultConfig = {
 			'|',
 			'bold',
 			'italic',
-			'link',
+			'underline',
 			'bulletedList',
 			'numberedList',
-			'|',
 			'indent',
 			'outdent',
-			'|',
-			'imageUpload',
-			'blockQuote',
+			'alignment',
 			'insertTable',
+			'link',
+			'imageUpload',
 			'mediaEmbed',
+			'fontSize',
+			'fontColor',
+			'fontBackgroundColor',
 			'undo',
-			'redo'
+			'redo',
+			'pageBreak'
 		]
 	},
 	image: {
